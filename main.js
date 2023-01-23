@@ -8,6 +8,11 @@
 * 
 ********************************************************************************/ 
 
+// dom requirement to run jsdom in node
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const dom = new JSDOM();
+global.document = dom.window.document;
 
 var page = 1;
 const perPage = 10;
