@@ -1,0 +1,19 @@
+{
+  "name": "moviesapp_a2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benakram4/moviesApp_A2.git"
+  },
+  "author": "Ben Akram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benakram4/moviesApp_A2/issues"
+  },
+  "homepage": "https://github.com/benakram4/moviesApp_A2#readme"
+}
