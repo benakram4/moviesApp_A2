@@ -6,13 +6,7 @@
 *  
 *  Name: Ben Akram Student ID: 158523217  Date: Jan 23 2023 
 * 
-********************************************************************************/ 
-
-// dom requirement to run jsdom in node
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const dom = new JSDOM();
-global.document = dom.window.document;
+********************************************************************************/
 
 var page = 1;
 const perPage = 10;
@@ -59,7 +53,6 @@ function loadMoviesData(title = null) {
                 document.querySelector(`#current-page`).innerHTML = 1;
                 document.querySelector('.pagination').classList.add('d-none');
             } else {
-                ;
                 //document.querySelector(`#current-page`).innerHTML = page;
                 document.querySelector('.pagination').classList.remove('d-none');
             }
@@ -129,9 +122,12 @@ function buttonFunc() {
         // prevent the form from from 'officially' submitting
         event.preventDefault();
         // populate the table with the search results
-        console.log(`page val in search ${page}`);
         page = 1;
-        loadMoviesData(document.querySelector('#findTitle').value);
+        let title = document.querySelector('#findTitle').value;
+        if(title !== null && title !== ""){
+            loadMoviesData(document.querySelector('#findTitle').value);
+        }
+        
     });
 
     //clear button click event,  clear the search bar and load the data
@@ -178,6 +174,7 @@ function paginationFunc() {
 // ====================================================
 // Execute when the DOM is 'ready'
 // ====================================================
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // loadMoviesData("The Matrix"); // for testing, remove before submission
