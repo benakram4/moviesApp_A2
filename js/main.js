@@ -13,12 +13,16 @@ var page = 1;
 const perPage = 10;
 const noImagePNG = "https://upload.wikimedia.org/wikipedia/commons/d/dc/No_Preview_image_2.png";
 
+// ====================================================
 //calculate time from minutes
+// ====================================================
 function calculateTime(minutes) {
     let hours = Math.floor(minutes / 60);
     let mins = (minutes % 60);
     return `${hours}h ${mins.toString().padStart(2, '0')}m`;
 }
+// ====================================================
+
 
 // ====================================================
 // Load the data from the API
@@ -109,6 +113,7 @@ function loadMoviesData(title = null) {
 }
 // ====================================================
 
+
 // ====================================================
 // Nav Bar/Search bar button functionality
 // ====================================================
@@ -140,6 +145,7 @@ function buttonFunc() {
     })
 }
 // ====================================================
+
 
 // ====================================================
 // Pagination Buttons Functionality
