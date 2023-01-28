@@ -36,7 +36,6 @@ function loadMoviesData(title = null) {
     fetch(url)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             //Creating the <tr> Elements
             let postRows = `${data.map(movie => (
                 `<tr data-id=${movie._id}>
@@ -68,13 +67,11 @@ function loadMoviesData(title = null) {
                 row.addEventListener('click', (e) => {
                     // get the clicked movie ID
                     let movieID = row.getAttribute('data-id');
-                    console.log(`The Movie ID is: ${movieID}`);
 
                     // load the movie data
                     fetch(`https://zany-teal-narwhal-cap.cyclic.app/api/movies/${movieID}`)
                         .then((res) => res.json())
                         .then((data) => {
-                            console.log(data);
 
                             let modalBody = `
                                         <div class = "container">
@@ -107,7 +104,6 @@ function loadMoviesData(title = null) {
             });
 
         })
-        console.log(`AAAA : ${page}`)
 }
 // ====================================================
 
@@ -147,7 +143,6 @@ function buttonFunc() {
 // ====================================================
 function paginationFunc() {
 
-    console.log(`BBBB : ${page}`)
     //if the next button is clicked, load the next page
     document.querySelector('#next-page').addEventListener('click', (event) => {
         page++;
