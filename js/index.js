@@ -130,20 +130,14 @@ function buttonFunc() {
         
     });
 
-    //clear button click event,  clear the search bar and load the data
-    document.querySelector('#clearButton').addEventListener('click', (event) => {
-        document.querySelector('#findTitle').value = "";
-        page = 1;
-        loadMoviesData();
-    });
-
-    //added by me for extra functionality
-    // navbar-brand click event, clear the search bar and load the data
-    document.querySelector('#navTitle').addEventListener('click', (event) => {
-        document.querySelector('#findTitle').value = "";
-        page = 1;
-        loadMoviesData();
-    })
+     //clear button click event,  clear the search bar and load the data only if the search bar is not empty
+        document.querySelector('#clearButton').addEventListener('click', (event) => {
+            if(document.querySelector('#findTitle').value !== null && document.querySelector('#findTitle').value !== ""){
+                document.querySelector('#findTitle').value = "";
+                page = 1;
+                loadMoviesData();
+            }
+        });
 }
 // ====================================================
 
